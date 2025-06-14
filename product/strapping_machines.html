@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strapping Machines - Tech Mac Automation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+    .product-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .tab-pane {
+      padding-top: 1rem;
+    }
+    .card {
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 2rem;
+    }
+    .product-thumbnails {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .thumbnail-container {
+      text-align: center;
+      width: 90px;
+    }
+    .thumbnail-img {
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+    .thumbnail-img.active {
+      border-color: #007bff;
+    }
+    .product-main-image img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+    }
+    .product-info {
+      padding-left: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+<!-- Top Bar -->
+<div class="top-bar px-3 py-2 text-white">
+  <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
+    <div class="contact-info d-flex flex-wrap gap-3">
+      <a href="tel:+1234567890"><i class="fas fa-phone-alt"></i>+91 99584400921</a>
+      <a href="mailto:info@techmac.in"><i class="fas fa-envelope"></i> info@techmac.in</a>
+      <a href="#"><i class="fas fa-map-marker-alt"></i>Plot 2, Jain Colony Part 3, Uttam Nagar, New Delhi-110059</a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top px-4 shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold fs-4" href="https://techmac.in/">Tech <span class="text-primary">Mac</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+      <ul class="navbar-nav mb-2 mb-lg-0 gap-2">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Product</a>
+          <ul class="dropdown-menu animate__animated animate__fadeIn">
+            <li><a class="dropdown-item" href="strapping_machines.html">Strapping Machines</a></li>
+            <li><a class="dropdown-item" href="carton_sealing_machines.html">Carton Sealing Machines</a></li>
+            <li><a class="dropdown-item" href="stretch_wrapping_machines.html">Stretch Wrapping Machines</a></li>
+            <li><a class="dropdown-item" href="case_erectors.html">Case Erectors</a></li>
+            <li><a class="dropdown-item" href="online_packaging_systems.html">Online Packaging Systems</a></li>
+            <li><a class="dropdown-item" href="strapping_tools.html">Strapping Tools</a></li>
+            <li><a class="dropdown-item" href="../product.html">See all Products</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="../video.html">Video</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <a href="../contact.html" class="btn btn-primary d-none d-lg-block">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-light text-center p-5">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Strapping Machines</h1>
+    <p class="lead">Choose from our wide range of Semi-Automatic, Automatic, and Online Strapping Systems for your industrial packaging needs.</p>
+  </div>
+</section>
+
+<!-- Tabs for Categories -->
+<div class="container mt-5">
+  <ul class="nav nav-tabs justify-content-center" id="productTabs" role="tablist">
+    <li class="nav-item">
+      <button class="nav-link active" id="semi-tab" data-bs-toggle="tab" data-bs-target="#semi" type="button" role="tab">Semi-Automatic (02)</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" id="auto-tab" data-bs-toggle="tab" data-bs-target="#auto" type="button" role="tab">Automatic (03)</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" id="online-tab" data-bs-toggle="tab" data-bs-target="#online" type="button" role="tab">Online Systems (04)</button>
+    </li>
+  </ul>
+
+<div class="tab-content mt-4" id="productTabsContent">
+
+  <!-- SEMI-AUTOMATIC TAB -->
+  <div class="tab-pane fade show active" id="semi" role="tabpanel" aria-labelledby="semi-tab">
+
+    <!-- Model 1 -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="product-main-image mb-3">
+          <img id="mainImage-semi1" src="../assets/img/product/p1.png" class="img-fluid border" alt="Model TMA 2" />
+        </div>
+        <div class="product-thumbnails">
+          <img src="../assets/img/product/p1.png" class="thumbnail-img active" onclick="changeImage('semi1', this)" alt="Thumbnail 1" />
+          <img src="../assets/img/product/p1s12.png" class="thumbnail-img" onclick="changeImage('semi1', this)" alt="Thumbnail 2" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4>Model: TMA 2 (New Generation Strapping Technology)</h4>
+        <p>This entry-level model offers compact design and reliable strapping for small-scale operations.</p>
+        <strong>Applications:</strong>
+        <ul>
+          <li>Corrugation industry, Box packaging</li>
+          <li>Paper industry</li>
+          <li>Light application</li>
+          <li>Bulk production</li>
+        </ul>
+        <strong>Specifications:</strong>
+        <ul>
+          <li><strong>Strap Width:</strong> 5–15 mm (Adjustable)</li>
+          <li><strong>Tension:</strong> 0–45 kg max</li>
+          <li><strong>Speed:</strong> 2.5 sec/strap (Adjustable)</li>
+          <li><strong>Power:</strong> 220V / 50Hz</li>
+          <li><strong>Box Size:</strong> Min-60 mm, Max-Any Size</li>
+          <li><strong>Top Thickness:</strong> 1 mm Thickness Steel</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="my-4" />
+
+    <!-- Model 2 -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="product-main-image mb-3">
+          <img id="mainImage-semi2" src="../assets/img/product/p1s11.png" class="img-fluid border" alt="Model KH 90" />
+        </div>
+        <div class="product-thumbnails">
+          <img src="../assets/img/product/p1s11.png" class="thumbnail-img active" onclick="changeImage('semi2', this)" alt="Thumbnail 1" />
+          <img src="../assets/img/product/p1s13.png" class="thumbnail-img" onclick="changeImage('semi2', this)" alt="Thumbnail 2" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4>Model: KH 90</h4>
+        <p>This advanced model is suitable for industrial use with improved speed and durability.</p>
+        <strong>Applications:</strong>
+        <ul>
+          <li>Light to medium boxes</li>
+          <li>Metal products, Wooden & Plastic crates</li>
+        </ul>
+        <strong>Specifications:</strong>
+        <ul>
+          <li><strong>Strap Width:</strong> 9,12,15 mm</li>
+          <li><strong>Tension:</strong> 5–50 kg (Variable)</li>
+          <li><strong>Speed:</strong> 2.5 sec/strap</li>
+          <li><strong>Power:</strong> 1 Phase, 230V AC motor</li>
+          <li><strong>Box Size:</strong> Min. 60 mm, Max - Any Size</li>
+          <li><strong>Top Thickness:</strong> 1.2 mm Stainless Steel</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTOMATIC TAB -->
+  <div class="tab-pane fade" id="auto" role="tabpanel" aria-labelledby="auto-tab">
+
+    <!-- TMA 101A -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="product-main-image mb-3">
+          <img id="mainImage-auto1" src="../assets/img/product/p1s21.png" class="img-fluid border" alt="TMA 101A Automatic Strapping Machine" />
+        </div>
+        <div class="product-thumbnails">
+          <img src="../assets/img/product/p1s21.png" class="thumbnail-img active" onclick="changeImage('auto1', this)" alt="View 1" />
+          <img src="../assets/img/product/p1s22.png" class="thumbnail-img" onclick="changeImage('auto1', this)" alt="View 2" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4>Model: TMA 101A (Fully Automatic Strapping Machine)</h4>
+        <p>The TMA 101A is a fully automatic strapping machine designed for high-speed and consistent strapping of cartons and packages in industrial environments.</p>
+        <strong>Applications:</strong>
+        <ul>
+          <li>Carton box packaging</li>
+          <li>Logistics and dispatch centers</li>
+          <li>Printing and paper industries</li>
+          <li>FMCG and pharma packaging lines</li>
+        </ul>
+        <strong>Specifications:</strong>
+        <ul>
+          <li><strong>Strap Width:</strong> 9 mm, 12 mm, 15 mm (Adjustable)</li>
+          <li><strong>Tension Range:</strong> 10–70 kg (Adjustable)</li>
+          <li><strong>Strapping Speed:</strong> 2.0 seconds per cycle</li>
+          <li><strong>Power Supply:</strong> 220V / 50Hz / Single Phase</li>
+          <li><strong>Frame Size:</strong> 850 mm (W) x 600 mm (H) (customizable)</li>
+          <li><strong>Control:</strong> PLC-based operation with touchscreen</li>
+          <li><strong>Features:</strong> Auto strap feeding, loop ejector, sensor-based operation</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="my-4" />
+
+    <!-- TMA 101E -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="product-main-image mb-3">
+          <img id="mainImage-auto2" src="../assets/img/product/p1s23.png" class="img-fluid border" alt="TMA 101E Automatic Strapping Machine" />
+        </div>
+        <div class="product-thumbnails">
+          <img src="../assets/img/product/p1s23.png" class="thumbnail-img active" onclick="changeImage('auto2', this)" alt="View 1" />
+          <img src="../assets/img/product/p1s24.png" class="thumbnail-img" onclick="changeImage('auto2', this)" alt="View 2" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4>Model: TMA 101E (Advanced Automatic Strapping System)</h4>
+        <p>The TMA 101E is a high-performance automatic strapping machine designed for reliable, efficient, and consistent strapping of medium to large packages.</p>
+        <strong>Applications:</strong>
+        <ul>
+          <li>Heavy-duty packaging industries</li>
+          <li>Metal & plastic crates packaging</li>
+          <li>Corrugated box bundling</li>
+          <li>Textile and warehouse packaging</li>
+        </ul>
+        <strong>Specifications:</strong>
+        <ul>
+          <li><strong>Strap Width:</strong> 9 mm, 12 mm, 15 mm</li>
+          <li><strong>Tension Range:</strong> 5–50 kg (Variable)</li>
+          <li><strong>Strapping Speed:</strong> 2.5 seconds per strap</li>
+          <li><strong>Power:</strong> 1 Phase, 230V AC Motor</li>
+          <li><strong>Box Size:</strong> Min. 60 mm, Max. Any size</li>
+          <li><strong>Table Surface:</strong> Stainless Steel (1.2 mm thickness)</li>
+          <li><strong>Automation:</strong> Sensor-based auto strapping, loop ejector</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="my-4" />
+
+    <!-- TMA-500HS -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="product-main-image mb-3">
+          <img id="mainImage-auto3" src="../assets/img/product/p1s25.png" class="img-fluid border" alt="TMA-500HS Automatic Strapping Machine" />
+        </div>
+        <div class="product-thumbnails">
+          <img src="../assets/img/product/p1s25.png" class="thumbnail-img active" onclick="changeImage('auto3', this)" alt="View 1" />
+          <img src="../assets/img/product/p1s26.png" class="thumbnail-img" onclick="changeImage('auto3', this)" alt="View 2" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4>Model: TMA-500HS (High-Speed Fully Automatic Strapping System)</h4>
+        <p>The TMA-500HS is a high-speed, fully automatic strapping machine designed for continuous packaging lines.</p>
+        <strong>Applications:</strong>
+        <ul>
+          <li>Corrugated box packaging</li>
+          <li>Heavy-duty warehouses</li>
+          <li>Logistics and e-commerce packaging lines</li>
+          <li>Textile, food, and pharmaceutical industries</li>
+        </ul>
+        <strong>Specifications:</strong>
+        <ul>
+          <li><strong>Strap Width:</strong> 9 mm, 12 mm, 15 mm</li>
+          <li><strong>Tension Range:</strong> 5–50 kg (Adjustable)</li>
+          <li><strong>Strapping Speed:</strong> 2.0–2.5 sec/strap</li>
+          <li><strong>Power:</strong> 1 Phase, 230V AC Motor</li>
+          <li><strong>Box Size:</strong> Min. 60 mm, Max. Any Size</li>
+          <li><strong>Top Thickness:</strong> 1.2 mm Stainless Steel Table</li>
+          <li><strong>Features:</strong> Loop ejector, fault indicator, auto strap refeed</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ONLINE SYSTEMS TAB -->
+  <div class="tab-pane fade" id="online" role="tabpanel" aria-labelledby="online-tab">
+    <!-- TMA-102A - Online Strapping System -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="product-main-image mb-3">
+      <img id="mainImage-online1" src="../assets/img/product/p1s31.png" class="img-fluid border" alt="TMA-102A Online Strapping Machine" />
+    </div>
+    <div class="product-thumbnails">
+      <img src="../assets/img/product/p1s31.png" class="thumbnail-img active" onclick="changeImage('online1', this)" alt="View 1" />
+      <img src="../assets/img/product/p1s32.png" class="thumbnail-img" onclick="changeImage('online1', this)" alt="View 2" />
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Model: TMA-102A (Fully Integrated Online Strapping System)</h4>
+    <p>The TMA-102A is an advanced, fully automatic online strapping system designed for seamless integration with conveyorized packaging lines. It ensures high-speed, consistent, and reliable strapping for continuous operations with minimal human intervention.</p>
+
+    <strong>Applications:</strong>
+    <ul>
+      <li>High-volume production lines</li>
+      <li>Corrugation & carton manufacturing</li>
+      <li>Distribution centers and logistics hubs</li>
+      <li>FMCG and export packaging units</li>
+    </ul>
+
+    <strong>Specifications:</strong>
+    <ul>
+      <li><strong>Strap Width:</strong> 9 mm, 12 mm, 15 mm (PP Strap)</li>
+      <li><strong>Tension Range:</strong> 10–60 kg (Adjustable)</li>
+      <li><strong>Strapping Speed:</strong> Up to 30 cycles/minute</li>
+      <li><strong>Power Supply:</strong> 3 Phase, 415V / 50Hz</li>
+      <li><strong>Arch Size:</strong> Customizable as per line configuration</li>
+      <li><strong>Conveyor Integration:</strong> Compatible with roller or chain belt conveyors</li>
+      <li><strong>Features:</strong> Auto strap feed, jam detection, PLC controlled interface, fault alarms</li>
+    </ul>
+  </div>
+</div>
+<hr class="my-4" />
+<!-- TMA 101A+FJID - Fully Automatic Strapping with Side Sealing -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="product-main-image mb-3">
+      <img id="mainImage-online2" src="../assets/img/product/p1s33.png" class="img-fluid border" alt="TMA 101A+FJID Online Strapping Machine" />
+    </div>
+    <div class="product-thumbnails">
+      <img src="../assets/img/product/p1s33.png" class="thumbnail-img active" onclick="changeImage('online2', this)" alt="TMA 101A+FJID View 1" />
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Model: TMA 101A+FJID (Fully Automatic Strapping with Side Sealing)</h4>
+    <p>The TMA 101A+FJID is a specialized fully automatic strapping machine with integrated side sealing mechanism. Ideal for moisture-sensitive packages and dusty environments, ensuring durable and secure strapping with minimal maintenance.</p>
+
+    <strong>Applications:</strong>
+    <ul>
+      <li>Heavy-duty packaging lines</li>
+      <li>Carton and corrugated box strapping</li>
+      <li>Food, pharmaceutical, and chemical industries</li>
+      <li>Export and warehousing operations</li>
+    </ul>
+
+    <strong>Specifications:</strong>
+    <ul>
+      <li><strong>Strap Width:</strong> 9 mm, 12 mm, 15 mm (PP Strap)</li>
+      <li><strong>Tension Range:</strong> 10–80 kg (Adjustable)</li>
+      <li><strong>Strapping Speed:</strong> Up to 25 cycles/minute</li>
+      <li><strong>Power Supply:</strong> 3 Phase, 415V / 50Hz</li>
+      <li><strong>Sealing Type:</strong> Side Sealing (Dust & Moisture Protection)</li>
+      <li><strong>Arch Size:</strong> Customizable as per package size</li>
+      <li><strong>Features:</strong> Auto strap feed, jam detection, PLC controlled system, easy maintenance design</li>
+    </ul>
+  </div>
+</div>
+<hr class="my-4" />
+<!-- TMA FJ-1D - Side Sealing Strapping System -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="product-main-image mb-3">
+      <img id="mainImage-online3" src="../assets/img/product/p1s34.png" class="img-fluid border" alt="TMA FJ-1D Side Sealing Strapping Machine" />
+    </div>
+    <div class="product-thumbnails">
+      <img src="../assets/img/product/p1s34.png" class="thumbnail-img active" onclick="changeImage('online3', this)" alt="TMA FJ-1D View 1" />
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Model: TMA FJ-1D (Side Sealing Strapping System)</h4>
+    <p>The TMA FJ-1D is designed for secure side sealing strapping, ideal for dusty, wet, or harsh environments. With its advanced sealing technology, it ensures strong and durable strapping for a variety of industrial packaging needs.</p>
+
+    <strong>Applications:</strong>
+    <ul>
+      <li>Heavy industries & warehouses</li>
+      <li>Food, chemical & pharmaceutical packaging</li>
+      <li>Moisture-sensitive products</li>
+      <li>Corrugated and wooden boxes</li>
+    </ul>
+
+    <strong>Specifications:</strong>
+    <ul>
+      <li><strong>Strap Width:</strong> 9 mm, 12 mm, 15 mm (PP Strap)</li>
+      <li><strong>Tension Range:</strong> 10–80 kg (Adjustable)</li>
+      <li><strong>Strapping Speed:</strong> Up to 20 cycles/minute</li>
+      <li><strong>Power Supply:</strong> 3 Phase, 415V / 50Hz</li>
+      <li><strong>Sealing Type:</strong> Side Seal (Dust & Water Protection)</li>
+      <li><strong>Arch Size:</strong> Customizable</li>
+      <li><strong>Features:</strong> PLC Control, Jam Detection, Auto Strap Feed, Low Maintenance</li>
+    </ul>
+  </div>
+</div>
+<hr class="my-4" />
+<!-- TMA SQ450 + TMA 305RP - Fully Integrated Online System -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="product-main-image mb-3">
+      <img id="mainImage-online4" src="../assets/img/product/p1s35.png" class="img-fluid border" alt="TMA SQ450 + TMA 305RP Online Strapping System" />
+    </div>
+    <div class="product-thumbnails">
+      <img src="../assets/img/product/p1s35.png" class="thumbnail-img active" onclick="changeImage('online4', this)" alt="TMA SQ450 + TMA 305RP View 1" />
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Model: TMA SQ450 + TMA 305RP (Fully Integrated Online Strapping System)</h4>
+    <p>The TMA SQ450 + TMA 305RP is a fully integrated packaging and strapping solution combining carton sealing, squaring, and automatic strapping in a seamless conveyor line. Ideal for high-speed automated production facilities.</p>
+
+    <strong>Applications:</strong>
+    <ul>
+      <li>Export packing units</li>
+      <li>High-speed distribution centers</li>
+      <li>FMCG and e-commerce packaging</li>
+      <li>Warehouse & logistics hubs</li>
+    </ul>
+
+    <strong>Specifications:</strong>
+    <ul>
+      <li><strong>Strap Width:</strong> 9 mm, 12 mm, 15 mm (PP Strap)</li>
+      <li><strong>Tension Range:</strong> 10–70 kg (Adjustable)</li>
+      <li><strong>Strapping Speed:</strong> Up to 30 cycles/minute</li>
+      <li><strong>Power Supply:</strong> 3 Phase, 415V / 50Hz</li>
+      <li><strong>Functions:</strong> Auto Carton Squaring, Sealing, and Strapping</li>
+      <li><strong>Integration:</strong> Complete Conveyor Line Integration</li>
+      <li><strong>Features:</strong> PLC Control, Jam Detection, Auto Strap Feed, Low Downtime</li>
+    </ul>
+  </div>
+</div>
+
+
+  </div>
+
+</div>
+</div>
+
+<footer class="bg-dark text-light py-5" style="background: linear-gradient(90deg, #0d6efd, #6610f2); margin-top: 50px;">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Company Info -->
+            <div class="col-lg-4 col-md-6">
+                <h5 class="mb-4"><b>About Us</b></h5>
+                <p class="mb-4">At Tech Mac, we deliver innovative and sustainable packaging solutions tailored to today’s fast-paced industries. From FMCG to pharma, our solutions ensure quality, speed, and visual appeal..</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon bg-primary"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon bg-info"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon bg-danger"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon bg-primary"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6">
+                <h5 class="mb-4"><b>Quick Links</b></h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="../index.html" class="footer-link">Home</a></li>
+                    <li class="mb-2"><a href="../about.html" class="footer-link">About</a></li>
+                    <li class="mb-2"><a href="../product.html" class="footer-link">Product</a></li>
+                    <li class="mb-2"><a href="../video.html" class="footer-link">Video</a></li>
+                    <li class="mb-2"><a href="../contact.html" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="col-lg-2 col-md-6">
+                <h5 class="mb-4"><b>Latest Product</b></h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="strapping_machines.html" class="footer-link">Strapping Machines</a></li>
+                    <li class="mb-2"><a href="case_erectors.html" class="footer-link">Case Erectors</a></li>
+                    <li class="mb-2"><a href="carton_sealing_machines.html" class="footer-link">Carton Sealing Machines</a></li>
+                    <li class="mb-2"><a href="packaging_consumables.html" class="footer-link">Packaging Consumables</a></li>
+                    <li class="mb-2"><a href="automatic_web_sealers.html" class="footer-link">Automatic Web Sealers</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-4 col-md-6">
+                <h5 class="mb-4"><b>Contact Info</b></h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        Plot 2, Jain Colony Part 3, Uttam Nagar, New Delhi-110059
+                    </li>
+                    <li class="mb-3">
+                        <i class="fas fa-phone me-2"></i>
+                        <a href="tel:+1234567890" class="footer-link">+91 9958400936, +91 99584400921</a>
+                    </li>
+                    <li class="mb-3">
+                        <i class="fas fa-envelope me-2"></i>
+                        <a href="mailto:contact@example.com" class="footer-link">info@techmac.in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <hr class="mb-4">
+                <div class="text-center">
+                    <p class="mb-0">&copy; 2025 <a href="https://emergexians.com/" style="text-decoration: none; color: #0e0c00;">Emergexians Infotech Pvt. Ltd. </a>All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+ <!-- Font Awesome (for icons, include in <head> or before icons) -->
+<script src="https://kit.fontawesome.com/a2e0e9b93f.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  function changeImage(tabId, thumbnail) {
+    const mainImage = document.getElementById(`mainImage-${tabId}`);
+    if (!mainImage) return;
+
+    // Change the main image source
+    mainImage.src = thumbnail.src;
+
+    // Find parent container to scope thumbnails properly
+    const thumbnailsContainer = thumbnail.closest('.col-md-6').parentElement;
+    const thumbnails = thumbnailsContainer.querySelectorAll('.thumbnail-img');
+
+    thumbnails.forEach(img => img.classList.remove('active'));
+    thumbnail.classList.add('active');
+  }
+</script>
+
+  <script>
+    // Preloader script
+    window.addEventListener("load", function () {
+      document.getElementById("preloader").style.display = "none";
+    });
+  </script>
+
+  <script>
+  AOS.init();
+</script>
+
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      992: { slidesPerView: 3 }
+    }
+  });
+</script>
+
+</body>
+</html>
