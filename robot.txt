@@ -1,0 +1,10 @@
+# robots.txt for https://techmac.in/
+
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Allow: /
+
+# Sitemap for better crawling
+Sitemap: https://techmac.in/sitemap.xml
